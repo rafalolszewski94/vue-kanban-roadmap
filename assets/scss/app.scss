@@ -1,0 +1,500 @@
+.wrapper {
+  display: flex;
+  width: 1440px;
+  border-radius: 25px;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042);
+  overflow: hidden;
+
+  @apply my-10;
+}
+
+.sidebar {
+  background-color: #fefeff;
+  max-width: 380px;
+
+  @apply z-10 flex w-full;
+
+  .sidebar-icons,
+  .sidebar-menu {
+    padding-bottom: 55px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    @apply bg-white;
+  }
+
+  .sidebar-icons {
+    border-right: 2px solid #f9f9fb;
+    z-index: 2;
+
+    li {
+      &:not(:last-child) {
+        @apply mb-3;
+      }
+    }
+
+    .header {
+      margin-bottom: 40px;
+    }
+  }
+
+  .sidebar-menu {
+    box-shadow: 2px 0 5px -2px rgba(0, 0, 0, 0.035);
+    z-index: 1;
+
+    @apply flex-grow relative;
+
+    .search {
+      @apply flex items-center flex-grow h-full relative;
+
+      svg {
+        @apply flex-shrink-0 text-gray-500 mr-2 absolute h-4 w-4 ml-3 pointer-events-none;
+      }
+
+      input {
+        @apply outline-none flex-grow h-full text-xs font-semibold pl-8 rounded-lg bg-gray-100 transition ease-in-out duration-150;
+
+        &:focus {
+          @apply bg-gray-200 text-gray-700;
+        }
+
+        &::placeholder {
+          @apply text-gray-500;
+        }
+      }
+    }
+  }
+
+  .sidebar-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @apply rounded-full;
+
+    &.active {
+      background-color: #f0f6f7;
+
+      svg {
+        @apply text-teal-600;
+      }
+    }
+
+    &:hover {
+      background-color: #f0f6f7;
+    }
+
+    &.menu-icon {
+      svg {
+        @apply text-black;
+      }
+    }
+
+    svg {
+      height: 24px;
+      width: 24px;
+      @apply text-gray-400;
+    }
+  }
+
+  .back-nav-icon {
+    right: -16px;
+    @apply absolute outline-none;
+  }
+}
+
+.header {
+  margin-top: 30px;
+  height: 40px;
+
+  @apply flex items-center;
+}
+
+.content {
+  margin-top: 40px;
+}
+
+h3 {
+  @apply text-2xl font-semibold;
+}
+
+button {
+  @apply outline-none;
+
+  &:focus {
+    @apply outline-none;
+  }
+}
+
+.button,
+.tag {
+  font-size: 12px;
+  letter-spacing: 0.7px;
+  padding: 11px 20px;
+
+  @apply rounded font-bold outline-none transition ease-in-out duration-150;
+
+  &:focus {
+    @apply outline-none;
+  }
+
+  &-sm {
+    padding: 6px 12px;
+  }
+
+  &-green {
+    @apply bg-green-500 text-white;
+
+    box-shadow: 0 5px 9px -5px rgba(#6ecd17, 0.57);
+
+    &:focus {
+      @apply bg-green-600;
+
+      &:active {
+        @apply bg-green-700;
+      }
+    }
+  }
+
+  &-teal {
+    @apply bg-teal-600 text-white;
+
+    box-shadow: 0 5px 9px -5px rgba(#5dd0de, 0.57);
+
+    &:focus {
+      @apply bg-teal-700;
+
+      &:active {
+        @apply bg-teal-800;
+      }
+    }
+  }
+
+  &-gray {
+    @apply bg-transparent text-gray-500;
+
+    &:hover {
+      @apply bg-gray-200;
+    }
+
+    &:focus {
+      @apply bg-gray-300 text-gray-700;
+
+      &:active {
+        @apply bg-gray-400 text-gray-700;
+      }
+    }
+  }
+
+  &.user-button {
+    padding: 0 12px;
+    height: 40px;
+    box-shadow: 0 1px 0 0.5px rgba(0, 0, 0, 0.05);
+
+    @apply bg-white inline-flex items-center ease-in-out duration-150;
+
+    &:hover {
+      box-shadow: 0 2px 3px 0.5px rgba(0, 0, 0, 0.05);
+    }
+
+    img {
+      @apply mr-2;
+    }
+
+    span {
+      @apply text-xs font-semibold;
+    }
+  }
+}
+
+.tag {
+  @apply inline-flex font-semibold;
+
+  &-sm {
+    @apply py-1;
+  }
+
+  &-gray {
+    @apply bg-gray-200 text-gray-600;
+  }
+
+  &-blue {
+    background-color: #e2efff;
+    color: #5c86c6;
+  }
+
+  &-red {
+    background-color: #fbe3e4;
+    color: #ca666c;
+  }
+}
+
+main {
+  background-color: #f5f8fa;
+  flex: 1;
+
+  .content {
+    padding-bottom: 55px;
+  }
+
+  .users-in-team {
+    margin-top: 6px;
+
+    @apply select-none;
+
+    .invite {
+      @apply ml-6 inline-flex;
+
+      a {
+        @apply rounded-lg px-2 flex-grow h-full flex items-center text-gray-500 font-semibold text-xs transition ease-in-out duration-150;
+
+        svg {
+          @apply mr-1;
+        }
+
+        &:hover {
+          @apply bg-gray-300 text-gray-700;
+        }
+      }
+    }
+  }
+
+  .toggle-view {
+    padding: 1px;
+    @apply rounded-full border flex items-center;
+    border-color: #dce3e7;
+
+    > div {
+      width: 28px;
+      height: 28px;
+      @apply flex-grow inline-flex items-center justify-center rounded-full text-sm text-gray-500 cursor-pointer;
+
+      &:not(:last-child) {
+        @apply mr-1;
+      }
+
+      &.active {
+        @apply bg-teal-600 text-white;
+      }
+    }
+  }
+
+  .actions {
+    @apply flex;
+
+    li {
+      &:not(:last-child) {
+        @apply mr-1;
+      }
+    }
+
+    .action {
+      color: #9baab2;
+      @apply rounded-full border text-xs font-semibold leading-snug tracking-tight flex items-center relative px-4 h-8 transition ease-in-out duration-150;
+      border-color: #dce3e7;
+
+      input {
+        @apply text-xs font-semibold tracking-tight leading-snug;
+
+        &:valid {
+          @apply text-gray-700;
+        }
+      }
+
+      input,
+      span {
+        @apply bg-transparent outline-none pl-5 w-full;
+      }
+
+      svg {
+        @apply w-4 h-4 absolute;
+      }
+
+      &.transparent {
+        @apply border-transparent;
+
+        span {
+          @apply p-0;
+        }
+
+        &:hover {
+          border-color: #dce3e7;
+        }
+      }
+
+      &.search {
+        width: 150px;
+      }
+
+      &.people {
+        svg {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+
+    button.action,
+    .action.search {
+      &:hover {
+        @apply bg-gray-200;
+      }
+    }
+  }
+}
+
+.label {
+  @apply text-gray-500 font-semibold text-xs;
+}
+
+.kanban {
+  height: 600px;
+  width: 1060px;
+
+  @apply px-12 flex overflow-x-auto;
+
+  &::after {
+    content: '';
+    min-width: 3rem;
+    @apply w-12 inline-flex h-full;
+  }
+}
+
+.kanban-list {
+  width: 300px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  @apply mt-8;
+
+  &:not(:last-of-type) {
+    @apply mr-6;
+  }
+
+  .sortable-ghost {
+    width: 300px;
+    box-shadow: none;
+    background-image: linear-gradient(
+      135deg,
+      #f5f7f9 25%,
+      #eff3f6 25%,
+      #eff3f6 50%,
+      #f5f7f9 50%,
+      #f5f7f9 75%,
+      #eff3f6 75%,
+      #eff3f6 100%
+    );
+    background-size: 30px 30px;
+    @apply rounded py-3 px-4 bg-white mb-2 relative overflow-hidden left-0 top-0 border border-gray-400;
+
+    * {
+      @apply opacity-0 select-none pointer-events-none;
+    }
+  }
+}
+
+.kanban-list__header {
+  @apply mb-4 flex justify-between;
+
+  .actions {
+    @apply text-gray-500 font-medium text-xs items-center;
+
+    a {
+      @apply h-6 w-6 inline-flex justify-center items-center rounded transition ease-in-out duration-150;
+
+      &:hover {
+        @apply bg-gray-300 text-gray-600;
+      }
+    }
+  }
+}
+
+.kanban-card {
+  width: 300px;
+  box-shadow: 0 1px 0 0.5px rgba(0, 0, 0, 0.05);
+
+  @apply rounded py-3 px-4 bg-white mb-2 border border-transparent;
+
+  .kanban-card__image {
+    @apply mb-2;
+
+    img {
+      height: 120px;
+      width: 100%;
+
+      @apply rounded object-cover border border-gray-100;
+    }
+  }
+  .kanban-card__title {
+    @apply font-semibold text-sm;
+  }
+  .kanban-card__footer {
+    @apply mt-3 flex justify-between text-gray-500;
+
+    .tags {
+      .add-tag {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        @apply text-xs rounded-full px-2 bg-gray-200 text-gray-600 font-semibold cursor-pointer;
+
+        &:hover {
+          @apply bg-gray-300;
+        }
+      }
+    }
+
+    .attachments {
+      @apply font-semibold text-sm;
+
+      svg {
+        @apply text-xs text-gray-400;
+      }
+    }
+  }
+}
+
+.team-list {
+  @apply flex flex-col mt-5;
+
+  li {
+    &:not(:last-child) {
+      @apply mb-4;
+    }
+
+    > a {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      @apply rounded-full flex items-center leading-none;
+
+      &.active {
+        background-color: #f0f6f7;
+
+        .title {
+          @apply text-teal-600;
+        }
+      }
+
+      .icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
+
+        @apply inline-flex;
+
+        img {
+          @apply rounded-full bg-white border border-gray-200;
+        }
+      }
+
+      .title {
+        @apply text-sm font-semibold;
+      }
+      .products {
+        @apply text-gray-500 text-xs font-normal;
+      }
+    }
+  }
+}
