@@ -5189,7 +5189,7 @@ globule@^1.0.0:
     lodash "~4.17.12"
     minimatch "~3.0.2"
 
-gonzales-pe@^4.2.3:
+gonzales-pe@^4.2.3, gonzales-pe@^4.2.4:
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/gonzales-pe/-/gonzales-pe-4.2.4.tgz#356ae36a312c46fe0f1026dd6cb539039f8500d2"
   integrity sha512-v0Ts/8IsSbh9n1OJRnSfa7Nlxi4AkXIsWB6vPept8FDbL4bXn3FNuxjYtO/nmBGu7GDkL9MFeGebeSu6l55EPQ==
@@ -5713,6 +5713,13 @@ inquirer@^7.0.0:
     string-width "^4.1.0"
     strip-ansi "^6.0.0"
     through "^2.3.6"
+
+invariant@2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
+  integrity sha1-nh9WrArNtr8wMwbzOL47IErmA2A=
+  dependencies:
+    loose-envify "^1.0.0"
 
 invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
@@ -9307,6 +9314,15 @@ purgecss-webpack-plugin@^1.4.0:
     purgecss "^1.4.0"
     webpack-sources "^1.4.3"
 
+purgecss-whitelister@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/purgecss-whitelister/-/purgecss-whitelister-2.4.0.tgz#83b4b7317906743697f04311b54d4d1a8ecd5c94"
+  integrity sha512-O0jBUDtY9dU9tUT0vA1FvwFdkKDerxzteYaBV49JCbm+QJLFKMlIsf5Kp5cdbLatHQNjJtV8VB8eXtISoZL2Dg==
+  dependencies:
+    glob-all "^3.1.0"
+    gonzales-pe "^4.2.4"
+    scss-parser "1.0.3"
+
 purgecss@^1.1.0, purgecss@^1.4.0:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-1.4.2.tgz#67ab50cb4f5c163fcefde56002467c974e577f41"
@@ -10001,6 +10017,14 @@ schema-utils@^2.0.0, schema-utils@^2.5.0, schema-utils@^2.6.0, schema-utils@^2.6
   dependencies:
     ajv "^6.10.2"
     ajv-keywords "^3.4.1"
+
+scss-parser@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/scss-parser/-/scss-parser-1.0.3.tgz#8e61ce8216e07506c52cf64afd8120e94d1fcd5c"
+  integrity sha512-XQKCfOJERmhn1yoNRUyxv9wgkf4DIv29Jk0m4FiZforeiCmGxrby8K3not7tQ8GK1yvtd9N0OnNimNetJ8V+zQ==
+  dependencies:
+    invariant "2.2.2"
+    lodash "^4.17.4"
 
 scss-tokenizer@^0.2.3:
   version "0.2.3"

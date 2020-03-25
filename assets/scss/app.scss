@@ -1,3 +1,7 @@
+@import 'windows';
+
+@import 'node_modules/@fortawesome/fontawesome-svg-core/styles.css';
+
 .wrapper {
   display: flex;
   width: 1440px;
@@ -428,9 +432,11 @@ main {
       @apply rounded object-cover border border-gray-100;
     }
   }
+
   .kanban-card__title {
     @apply font-semibold text-sm;
   }
+
   .kanban-card__footer {
     @apply mt-3 flex justify-between text-gray-500;
 
@@ -492,6 +498,7 @@ main {
       .title {
         @apply text-sm font-semibold;
       }
+
       .products {
         @apply text-gray-500 text-xs font-normal;
       }

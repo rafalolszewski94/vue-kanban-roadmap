@@ -1,0 +1,18 @@
+body.pc {
+  .sidebar {
+    .sidebar-menu {
+      .search {
+        input {
+          @apply font-medium;
+        }
+      }
+    }
+  }
+
+  .button,
+  .tag,
+  main .actions .action,
+  main .actions .action input {
+    @apply font-medium;
+  }
+}

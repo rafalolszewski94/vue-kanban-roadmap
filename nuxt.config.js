@@ -1,3 +1,5 @@
+import whitelister from 'purgecss-whitelister'
+
 export default {
   mode: 'universal',
   head: {
@@ -22,7 +24,8 @@ export default {
   plugins: [
     '@/plugins/fontawesome',
     { src: '@/plugins/vueperfectscrollbar', mode: 'client' },
-    { src: '@/plugins/vuedraggable', mode: 'client' }
+    { src: '@/plugins/vuedraggable', mode: 'client' },
+    { src: '@/plugins/utils', mode: 'client' }
   ],
   buildModules: [
     '@nuxtjs/eslint-module',
@@ -33,5 +36,18 @@ export default {
   axios: {},
   build: {
     extend(config, ctx) {}
+  },
+  tailwindcss: {
+    purgeCSSInDev: true
+  },
+  purgeCSS: {
+    paths: ['components/**/*.vue', 'layouts/**/*.vue', 'pages/**/*.vue'],
+    whitelist: () =>
+      whitelister([
+        './assets/css/*.css',
+        './assets/scss/*.scss',
+        './node_modules/vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css',
+        './node_modules/@fortawesome/fontawesome-svg-core/styles.css'
+      ])
   }
 }
